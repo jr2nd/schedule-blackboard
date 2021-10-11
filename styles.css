@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  color: #fabfab;
+}
+#big-container {
+  display: flex;
+}
+.containers {
+  width: 20%;
+  border: solid gray;
+  border-width: 0 2px 3px 0;
+  border-radius: 0 10% 20% 5%;
+}
+h1 {
+  font-size: 2rem;
+}
+#selected {
+background-color: #fabfab;
+color: black;
+}
+.hidden {
+  display: none;
+}
