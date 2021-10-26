@@ -2,14 +2,13 @@
   box-sizing: border-box;
 }
 body {
-  background-color: black;
+  background-color: rgb(109, 44, 44);
   color: #fabfab;
 }
 #big-container {
   display: flex;
 }
 .containers {
-  width: 20%;
   border: solid gray;
   border-width: 0 2px 3px 0;
   border-radius: 0 10% 20% 5%;
@@ -18,9 +17,28 @@ h1 {
   font-size: 2rem;
 }
 #selected {
-background-color: #fabfab;
-color: black;
+  background-color: #fabfabaf;
+  /* background-color: rgba(250, 191, 171, .5); */
+  color: black;
 }
 .hidden {
   display: none;
 }
+span {
+  border: solid gray 1px;
+}
+.addedFacility,
+.amMemberAssigned::before,
+.pmMemberAssigned::after {
+  background-color: #fabfab;
+  color: black;
+}
+.amMemberAssigned::before {
+  content: "AM";
+}
+.pmMemberAssigned::after {
+  content: "PM";
+}
+.weeklySchedule {
+  border: solid gray 2px;
+} 
