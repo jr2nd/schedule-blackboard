@@ -1,4 +1,4 @@
-* {
+*,*::before, *::after {
   box-sizing: border-box;
 }
 body {
@@ -13,6 +13,11 @@ body {
   border-width: 0 2px 3px 0;
   border-radius: 0 10% 20% 5%;
 }
+#displayDate {
+  background-color: white;
+  color: rgb(109, 44, 44);
+  border-radius: 5px;
+}
 h1 {
   font-size: 2rem;
 }
@@ -21,13 +26,23 @@ h1 {
   /* background-color: rgba(250, 191, 171, .5); */
   color: black;
 }
+.filterMember,.filterFacility {
+  background-color: lightgray;
+  color: black;
+}
+.filterMember::before,.filterMember::after,
+.filterFacility::before,.filterFacility::after 
+{
+  content: 'x';
+  border: solid red 2px;
+  border-radius: 2px;
+}
 .hidden {
   display: none;
 }
 span {
   border: solid gray 1px;
 }
-.addedFacility,
 .amMemberAssigned::before,
 .pmMemberAssigned::after {
   background-color: #fabfab;
@@ -41,4 +56,17 @@ span {
 }
 .weeklySchedule {
   border: solid gray 2px;
-} 
+}
+.addedFacility {
+  background-color: black;
+  color: white;
+}
+.filter {
+  background-color: green;
+  color: yellow;
+}
+#version {
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+}

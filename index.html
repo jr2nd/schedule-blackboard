@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
+    <script src="fakedb.js" defer></script>
     <title>Schedule Blackboard</title>
   </head>
   <body>
@@ -18,18 +19,28 @@
       <button id="btnLastWeek" class="btn btn-success">Last Week</button>
       <button id="btnPrevDay" class="btn btn-warning">Last Day</button>
       <button id="btnNextDay" class="btn btn-warning">Next Day</button>
-      <button id="btnNextWeek" class="btn btn-large btn-success">
+      <button id="btnNextWeek" class="btn btn-success">
         Next Week
       </button>
     </div>
     <button id="btnSubmit" class="btn btn-primary">Submit</button>
     <div id="big-container" class="container">
       <div class="row">
-        <div id="member-list" class="col-sm-4"></div>
+        <button id="btnShowMembers" class="d-sm-none" onclick="showHideList()">
+          Members
+        </button>
+        <button
+          id="btnShowFacilities"
+          class="d-sm-none"
+          onclick="showHideList()"
+        >
+          Facilities
+        </button>
+        <div id="member-list" class="col-sm-4 hidden d-sm-block">membelrist</div>
         <div id="teams-list" class="col-sm-4">
-          <h1>TEAMS</h1>
+          <h1>SCHEDULE</h1>
           <div id="teams">
-            <div id="displayDate"></div>
+            <div class="displayDate"></div>
             <h2>TEAM 1</h2>
             <div class="amFacility"></div>
             <div class="pmFacility"></div>
@@ -38,8 +49,23 @@
             <div class="pmFacility"></div>
           </div>
         </div>
-        <div id="facility-list" class="col-sm-4"></div>
+        <div id="facility-list" class="col-sm-4 hidden d-sm-block"></div>
       </div>
+    </div>
+    <div id="version">
+      <ul>
+        <h2>Version 3</h2>
+        <li>
+          responsive
+        </li>
+        <h2>Version 4</h2>
+        <li>
+          database
+        </li>
+        <li>
+          allow previously edited dates to be edited by scrolling to its date
+        </li>
+      </ul>
     </div>
     <div id="weekly" class="container">
       <div id="weeklySchedule" class="row"></div>
