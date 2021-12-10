@@ -13,7 +13,10 @@ body {
   border-width: 0 2px 3px 0;
   border-radius: 0 10% 20% 5%;
 }
-#displayDate {
+#teams {
+  margin: 20px;
+}
+.displayDate {
   background-color: white;
   color: rgb(109, 44, 44);
   border-radius: 5px;
@@ -29,6 +32,7 @@ h1 {
 .filterMember,.filterFacility {
   background-color: lightgray;
   color: black;
+  opacity: .5;
 }
 .filterMember::before,.filterMember::after,
 .filterFacility::before,.filterFacility::after 
@@ -69,4 +73,13 @@ span {
   background-color: white;
   color: black;
   border-radius: 3px;
+}
+.amFacilities, .pmFacilities {
+  text-decoration: underline;
+}
+.amFacilityList,.pmFacilityList {
+  font-style: italic ;
+}
+textarea {
+  font-size: 12px;
 }

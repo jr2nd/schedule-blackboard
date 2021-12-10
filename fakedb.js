@@ -34,27 +34,21 @@ const fakeFacilityDatabase = [
 ];
 initializeFakeDatabase();
 function initializeFakeDatabase() {
-  memberList.innerHTML = "<h1>MEMBERS</h1>";
+  //populate facility list and roster
   for (let i = 0; i < fakeEmployeeDatabase.length; i++) {
-    memberList.innerHTML += `<div class="members">${fakeEmployeeDatabase[i]}</div>`;
+    memberList.innerHTML += `<div class="members col-4">${fakeEmployeeDatabase[i]}</div><input class='col-8'></input>`;
+  } 
+  for (let i = 0; i < fakeFacilityDatabase.length; i++) {
+    facilityList.innerHTML += `<div class="facilities">${fakeFacilityDatabase[i]}</div>`;
   }
+
+  //add event listeners
   let members = document.querySelectorAll(".members");
   for (let i = 0; i < members.length; i++) {
-    members[i].addEventListener("click", selectItem);
+  members[i].addEventListener("click", selectItem);
   }
-  facilityList.innerHTML = "<h1>FACILITIES</h1>";
-  for (let i = 0; i < fakeFacilityDatabase.length; i++) {
-    facilityList.innerHTML += `<h4 class="facilities">${fakeFacilityDatabase[i]}</h4>`;
-  }
-  //add event listeners
   let facilities = document.querySelectorAll(".facilities");
   for (let i = 0; i < facilities.length; i++) {
     facilities[i].addEventListener("click", selectItem);
-  }
-  for (let i = 0; i < amFacilities.length; i++) {
-    amFacilities[i].innerHTML = "<h3>AM FACILITY</h3>";
-  }
-  for (let i = 0; i < pmFacilities.length; i++) {
-    pmFacilities[i].innerHTML = "<h3>PM FACILITY</h3>";
   }
 }

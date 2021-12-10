@@ -17,15 +17,17 @@
   <body>
     <div class="btn-group">
       <button id="btnLastWeek" class="btn btn-success">Last Week</button>
-      <button id="btnPrevDay" class="btn btn-warning">Last Day</button>
+      <button id="btnPrevDay" class="btn btn-warning">Prev Day</button>
       <button id="btnNextDay" class="btn btn-warning">Next Day</button>
       <button id="btnNextWeek" class="btn btn-success">
         Next Week
       </button>
     </div>
-    <button id="btnSubmit" class="btn btn-primary">Submit</button>
+    <button id="btnStage" class="btn btn-primary">Submit</button>
+    <a href="user.html" id="showUser">Show Schedule</a>
     <div id="big-container" class="container">
       <div class="row">
+        <!--btnShowMembers, btnShowFacilities for small screens  -->
         <button id="btnShowMembers" class="d-sm-none" onclick="showHideList()">
           Members
         </button>
@@ -36,21 +38,19 @@
         >
           Facilities
         </button>
-        <div id="member-list" class="col-sm-4 hidden d-sm-block">membelrist</div>
-        <div id="teams-list" class="col-sm-4">
-          <h1>SCHEDULE</h1>
-          <div id="teams">
-            <div class="displayDate"></div>
-            <h2>TEAM 1</h2>
-            <div class="amFacility"></div>
-            <div class="pmFacility"></div>
-            <h2>TEAM 2</h2>
-            <div class="amFacility"></div>
-            <div class="pmFacility"></div>
-          </div>
-        </div>
-        <div id="facility-list" class="col-sm-4 hidden d-sm-block"></div>
+        <!-- -------------------------------- -->
       </div>
+      <div id="facility-list" class="hidden d-sm-block"></div>
+      <div id="teams">
+        <div class="displayDate"></div>
+          <div class="amFacilities">AM Facilities</div>
+          <textarea rows=4 placeholder="This will be seen by members"></textarea>
+          <div class="amFacilityList"></div>
+          <div class="pmFacilities">PM Facilities</div>
+          <textarea rows=4></textarea>
+          <div class="pmFacilityList"></div>
+      </div>
+      <div id="member-list" class="hidden d-sm-block"></div>
     </div>
     <div id="version">
       <ul>
@@ -70,5 +70,6 @@
     <div id="weekly" class="container">
       <div id="weeklySchedule" class="row"></div>
     </div>
+    <button id="btnPostSchedule">Post</button>
   </body>
 </html>
