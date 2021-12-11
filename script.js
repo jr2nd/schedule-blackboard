@@ -1,4 +1,6 @@
 //initialize date
+const defaultAMtime = "09:00";
+const defaultPMtime = "13:15";
 let today = new Date();
 let monday = today.getDate() - today.getDay() + 1;
 today.setDate(monday);
@@ -58,30 +60,38 @@ function selectItem() {
 } //selectItem()
 function addFacilityToTeam() {
   const selected = document.querySelector("#selected");
-  if(!selected)return;
-if(!selected.classList.contains('facilities'))return;
+  if (!selected) return;
+  if (!selected.classList.contains("facilities")) return;
   selected.removeAttribute("id");
   selected.classList.add("addedFacility");
   const addedFacility = selected.cloneNode(true);
   addedFacility.setAttribute("class", "assignedFacility");
   addedFacility.addEventListener("click", addMemberToTeam);
-  const time = document.createElement('INPUT')
-  time.type = 'time';
-  addedFacility.appendChild(time)
-  if(this.classList.contains('amFacilities')){
-  amFacilityList[0].appendChild(addedFacility)
-  time.value = '09:00'
+  const time = document.createElement("INPUT");
+  time.type = "time";
+  addedFacility.appendChild(time);
+  if (this.classList.contains("amFacilities")) {
+    addedFacility.classList.add("amFacility");
+    amFacilityList[0].appendChild(addedFacility);
+    time.value = defaultAMtime;
   }
-if(this.classList.contains('pmFacilities')){
-pmFacilityList[0].appendChild(addedFacility)
-time.value = '13:15'
-}
+  if (this.classList.contains("pmFacilities")) {
+    addedFacility.classList.add("pmFacility");
+    pmFacilityList[0].appendChild(addedFacility);
+    time.value = defaultPMtime;
+  }
 } //addFacilityToTeam()
 function addMemberToTeam() {
   const selected = document.querySelector("#selected");
-  this.appendChild(selected)
+  const addedMember = selected.cloneNode(true);
+  if (this.classList.contains("amFacility"))
+    selected.classList.add("amAssigned");
+  if (this.classList.contains("pmFacility"))
+    selected.classList.add("pmAssigned");
+  selected.removeAttribute("id");
+  this.appendChild(addedMember);
   //prevent bubbling
-  target.event.preventDefault();
+  // target.event.preventDefault();
 } //addMemberToTeam()
 
 //

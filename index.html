@@ -15,15 +15,16 @@
     <title>Schedule Blackboard</title>
   </head>
   <body>
-    <div class="btn-group">
-      <button id="btnLastWeek" class="btn btn-success">Last Week</button>
+    <div class="btn-group sticky-top">
+      <button id="btnLastWeek" class="btn btn-success">Prev Week</button>
       <button id="btnPrevDay" class="btn btn-warning">Prev Day</button>
+      <div class="displayDate"></div>
       <button id="btnNextDay" class="btn btn-warning">Next Day</button>
       <button id="btnNextWeek" class="btn btn-success">
         Next Week
       </button>
+      <button id="btnStage" class="btn btn-primary">Stage</button>
     </div>
-    <button id="btnStage" class="btn btn-primary">Submit</button>
     <a href="user.html" id="showUser">Show Schedule</a>
     <div id="big-container" class="container">
       <div class="row">
@@ -40,17 +41,16 @@
         </button>
         <!-- -------------------------------- -->
       </div>
-      <div id="facility-list" class="hidden d-sm-block"></div>
-      <div id="teams">
-        <div class="displayDate"></div>
+      <div id="facility-list" class="hidden d-sm-block scroll"></div>
+      <div id="teams" class="scroll">
           <div class="amFacilities">AM Facilities</div>
-          <textarea rows=4 placeholder="This will be seen by members"></textarea>
+          <textarea class='hidden d-sm-block' placeholder="This will be seen by members" rows='1'></textarea>
           <div class="amFacilityList"></div>
           <div class="pmFacilities">PM Facilities</div>
-          <textarea rows=4></textarea>
+          <textarea placeholder="This will be seen by members" rows='1'></textarea>
           <div class="pmFacilityList"></div>
-      </div>
-      <div id="member-list" class="hidden d-sm-block"></div>
+        </div>
+        <div id="member-list" class="hidden d-sm-block scroll"></div>
     </div>
     <div id="version">
       <ul>
