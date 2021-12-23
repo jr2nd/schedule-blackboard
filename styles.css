@@ -22,10 +22,11 @@ body {
   border-radius: 5px;
 }
 #selected {
-  background-color: #fabfabaf;
+  background-color: #fabfab/*af*/;
   /* background-color: rgba(250, 191, 171, .5); */
   color: black;
 }
+.filteredItem,
 .filterMember,.filterFacility {
   background-color: lightgray;
   color: black;
@@ -43,6 +44,8 @@ body {
 }
 span {
   border: solid gray 1px;
+  font-size: small;
+  font-style: italic ;
 }
 .amAssigned::before,
 .pmAssigned::after {
@@ -50,13 +53,10 @@ span {
   color: black;
 }
 .amAssigned::before {
-  content: "AM";
+  /* content: "AM"; */
 }
 .pmAssigned::after {
-  content: "PM";
-}
-.weeklySchedule {
-  border: solid gray 2px;
+  /* content: 'PM'; */
 }
 .addedFacility {
   background-color: black;
@@ -69,7 +69,7 @@ span {
 #version {
   background-color: white;
   color: black;
- border-radius: 3px;
+  border-radius: 3px;
 }
 .amFacilities, .pmFacilities {
   text-decoration: underline;
@@ -88,6 +88,7 @@ textarea, input {
   color: #fabfab;
   border: none;
   opacity: .6;
+  width: 300px;
 }
 textarea:focus, textarea:hover,
 input:focus, input:hover,
@@ -99,4 +100,7 @@ input:focus, input:hover,
   height: 80vh;
   overflow-y: auto;
   width: 40vw;
+}
+.weeklySchedule {
+  border: solid gray 2px;
 }

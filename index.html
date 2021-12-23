@@ -25,24 +25,15 @@
       </button>
       <button id="btnStage" class="btn btn-primary">Stage</button>
     </div>
-    <a href="user.html" id="showUser">Show Schedule</a>
     <div id="big-container" class="container">
       <div class="row">
-        <!--btnShowMembers, btnShowFacilities for small screens  -->
-        <button id="btnShowMembers" class="d-sm-none" onclick="showHideList()">
+        <button id="btnShowMembers" class="d-sm-none" onclick="toggleLists()">
           Members
         </button>
-        <button
-          id="btnShowFacilities"
-          class="d-sm-none"
-          onclick="showHideList()"
-        >
-          Facilities
-        </button>
-        <!-- -------------------------------- -->
+       <!-- -------------------------------- -->
       </div>
-      <div id="facility-list" class="hidden d-sm-block scroll"></div>
-      <div id="teams" class="scroll">
+      <div id="facility-list" class="d-sm-block scroll"></div>
+      <div id="teams">
           <div class="amFacilities">AM Facilities</div>
           <textarea class='hidden d-sm-block' placeholder="This will be seen by members" rows='1'></textarea>
           <div class="amFacilityList"></div>
@@ -50,7 +41,7 @@
           <textarea placeholder="This will be seen by members" rows='1'></textarea>
           <div class="pmFacilityList"></div>
         </div>
-        <div id="member-list" class="hidden d-sm-block scroll"></div>
+        <div id="member-list" class="container hidden d-sm-block scroll"></div>
     </div>
     <div id="version">
       <ul>
